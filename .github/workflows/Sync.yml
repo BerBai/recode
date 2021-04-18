@@ -10,7 +10,15 @@ jobs:
         env: 
           SSH_PRIVATE_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
         with:
-                # 注意替换为你的 GitHub 源仓库地址
-                source-repo: "git@github.com:tooyi/recode.git"
-                # 注意替换为你的 Gitee 目标仓库地址
-                destination-repo: "git@gitee.com:tooyi/recode.git"
+          # 注意替换为你的 GitHub 源仓库地址
+          source-repo: "git@github.com:tooyi/recode.git"
+          # 注意替换为你的 Gitee 目标仓库地址
+          destination-repo: "git@gitee.com:tooyi/recode.git"
+      - uses: yanglbme/gitee-pages-action@master
+        with:
+          # 注意替换为你的 Gitee 用户名
+          gitee-username: username
+          # 注意在 Settings->Secrets 配置 GITEE_PASSWORD 密码
+          gitee-password: ${{ secrets.GITEE_PASSWORD }}
+          # 注意替换为你的 Gitee 仓库
+          gitee-repo: username/repositoryname
