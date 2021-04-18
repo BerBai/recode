@@ -1,9 +1,3 @@
-<p align="center">
-  <a href="https://github.com/tooyi/recode">
-    <img src="./images/logo.png">
-  </a>
-</p>
-
 <div align="center">
 
 [![PRs Welcome](https://badgen.net/badge/PRs/welcome/green)](../../pulls)  [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fyanglbme%2Fgitee-pages-action.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fyanglbme%2Fgitee-pages-action?ref=badge_shield)<br>[![release](https://img.shields.io/github/v/release/tooyi/recode.svg)](../../releases) [![github](https://badgen.net/badge/⭐/GitHub/blue)](https://github.com/tooyi/recode) [![gitee](https://badgen.net/badge/⭐/Gitee/blue)](https://gitee.com/tooyi/recode) 
