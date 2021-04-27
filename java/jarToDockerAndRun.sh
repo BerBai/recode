@@ -1,6 +1,8 @@
 #!/bin/bash
 
 #-----------使用说明-----------#
+#v2 2021.04.27
+#1.自动创建项目路径
 #v1 2021.04.17
 #1.备份jar包
 #2.停止、删除docker容器
@@ -32,6 +34,13 @@ function transfer(){
  
 # 备份原先的jar包
 function backup(){
+	echo "检测项目文件夹$BASE_PATH是否存在"
+	if [ ! -d "$BASE_PATH/backup" ];then
+      	mkdir -p $BASE_PATH/backup
+    else
+      	echo "$BASE_PATH文件夹已经存在"
+    fi
+    
 	if [ -f "$BASE_PATH/$SERVER_NAME.jar" ]; then
     	echo "$SERVER_NAME.jar 备份..."
         	mv $BASE_PATH/$SERVER_NAME.jar $BASE_PATH/$SERVER_NAME-$DATE.jar
