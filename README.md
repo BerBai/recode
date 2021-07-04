@@ -8,5 +8,7 @@
 **具体说明进入具体文件查看**
 
 ## 文件目录
-[jarToDockerAndRun.sh](https://github.com/tooyi/recode/blob/master/java/jarToDockerAndRun.sh)
+[jar_docker_run.sh](/java/jar_docker_run.sh)
+[war_docker_run.sh](/java/war_docker_run.sh)
+[run_jar.sh](/java/run_jar.sh)
 
