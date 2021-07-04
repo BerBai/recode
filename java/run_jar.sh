@@ -30,7 +30,6 @@ is_file_exist(){
 
 # 备份jar包
 backup(){
-  echo "================================================="
   if [ -d "$APP_HOME/backup" ];then
     echo "backup folder exist, continue to backup jar-file"
   else
@@ -40,7 +39,6 @@ backup(){
   echo "success：backup $APP_NAME to $APP_HOME/backup"
   mv $APP_NAME $APP_NAME-$DATE
   mv $APP_NAME-$DATE $APP_HOME/backup
-  echo "================================================="
 }
 
 #检查程序是否在运行
@@ -58,9 +56,7 @@ is_exist(){
 start(){
   is_exist
   if [ $? -eq "0" ]; then
-    echo "================================================="
     echo "warn: $APP_NAME is already running. (pid=$pid)"
-    echo "================================================="
   else
     nohup java -jar $APP_NAME  > /dev/null 2>&1 &
     echo "${APP_NAME} start success"
@@ -74,9 +70,7 @@ stop(){
     kill -9 $pid
 	echo "${APP_NAME} stop success"
   else
-	echo "================================================="
     echo "warn: $APP_NAME is not running"
-    echo "================================================="
   fi  
 }
  
@@ -84,16 +78,13 @@ stop(){
 status(){
   is_exist
   if [ $? -eq "0" ]; then
-	echo "================================================="
     echo "warn: $APP_NAME is already running. (pid=$pid)"
-    echo "================================================="
   else
-    echo "================================================="
     echo "warn: $APP_NAME is not running"
-    echo "================================================="
   fi
 }
 
+echo "================================================="
 is_file_exist
 if [ $? = 0 ];then
   #根据输入参数，选择执行对应方法，不输入则执行使用说明
@@ -116,11 +107,10 @@ if [ $? = 0 ];then
       backup
       ;;
     *)
-      echo "================================================="
       echo "Tips: start|stop|restart|status|backup"
-      echo "================================================="
       ;;
   esac
 else
   echo "Number of files exceeded, not run this script"
 fi
+echo "================================================="
